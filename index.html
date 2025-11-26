@@ -7,7 +7,7 @@
     <style>
         /* GENERAL SETTINGS (Minimalist) */
         :root {
-            --ita-blue: #004586; /* Institutional Blue */
+            --ita-blue: #004586;
             --dark-gray: #333333;
             --light-gray: #f4f4f4;
             --white: #ffffff;
@@ -38,11 +38,20 @@
             text-align: center;
         }
 
+        /* LOGO STYLE */
+        .logo {
+            max-width: 180px; /* Ajuste o tamanho da logo aqui */
+            height: auto;
+            display: block;
+            margin: 0 auto 20px auto; /* Centraliza e dá margem embaixo */
+        }
+
         h1 {
             color: var(--ita-blue);
             margin: 0;
             font-size: 2.5rem;
             letter-spacing: -1px;
+            line-height: 1.2;
         }
 
         .subtitle {
@@ -80,14 +89,21 @@
         /* SCHEDULE LIST */
         .schedule-item {
             display: flex;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             align-items: flex-start;
+            border-bottom: 1px solid #f9f9f9;
+            padding-bottom: 15px;
+        }
+
+        .schedule-item:last-child {
+            border-bottom: none;
         }
 
         .time {
-            font-weight: bold;
-            min-width: 80px;
+            font-weight: 800;
+            min-width: 100px; /* Aumentei levemente para garantir espaço */
             color: var(--ita-blue);
+            font-size: 0.95rem;
         }
 
         .details {
@@ -95,15 +111,53 @@
         }
 
         .title {
-            font-weight: bold;
+            font-weight: 700;
             display: block;
+            margin-bottom: 4px;
+            color: #222;
+        }
+
+        .speaker-container {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 10px;
         }
 
         .speaker {
             font-size: 0.9rem;
             color: #555;
-            display: block;
             font-style: italic;
+        }
+
+        /* LATTES LINK STYLE */
+        .lattes-link {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            color: var(--ita-blue);
+            border: 1px solid var(--ita-blue);
+            padding: 2px 6px;
+            border-radius: 3px;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            font-weight: 600;
+        }
+
+        .lattes-link:hover {
+            background-color: var(--ita-blue);
+            color: var(--white);
+        }
+
+        /* BREAKS */
+        .break-item {
+            background-color: #fcfcfc;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+            color: #777;
+            font-style: italic;
+            margin-bottom: 20px;
+            border: 1px dashed #ddd;
         }
 
         /* FOOTER */
@@ -127,15 +181,12 @@
             margin-top: 20px;
         }
 
-        .btn:hover {
-            background-color: #003366;
-        }
-
         /* RESPONSIVE */
         @media (max-width: 600px) {
             h1 { font-size: 2rem; }
             .schedule-item { flex-direction: column; }
             .time { margin-bottom: 5px; }
+            .speaker-container { margin-top: 5px; }
         }
     </style>
 </head>
@@ -143,65 +194,143 @@
 
     <div class="container">
         <header>
-            <p style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px;">ITA &bull; IEI &bull; IEE</p>
+            <img src="ITA_logo (2).png" alt="ITA Logo" class="logo">
+            
+            <p style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; margin-top:0;">ITA &bull; IEI &bull; IEE</p>
             
             <h1>WS LESSONIA 2025</h1>
             <p class="subtitle">Workshop on Planning and Scientific Presentations</p>
             
             <div class="alert-box">
-                <strong>⚠️ Important Note:</strong> Due to international online participation, presentations will be conducted predominantly in <strong>English</strong>.
+                <strong>⚠️ Important:</strong> Presentations will be conducted predominantly in <strong>English</strong>.
             </div>
 
-            <a href="LINK_TO_FORM_HERE" class="btn">Register Now</a>
+            <a href="#" class="btn">Register Now</a>
         </header>
 
         <section id="about">
             <h2>About the Event</h2>
-            <p><strong>WS LESSONIA 2025</strong> brings together researchers from LabGeo and LabGE to discuss the state of the art in SAR image processing, define new imaging demands, and address future project challenges.</p>
-            <p><strong>📍 Location:</strong> ITA, São José dos Campos (Auditorium TBD)</p>
+             <p><strong>WS LESSONIA 2025</strong> brings together researchers from LabGeo, LabGE and ICEYE to discuss the state of the art in SAR image processing, define new imaging demands, and address future project challenges.</p>
+            <p><strong>📍 Location:</strong> ITA, São José dos Campos (Auditório Armel Picquenard) <br> 📅 December 11th, 13:45 BRT</p>
         </section>
 
         <section id="schedule">
-            <h2>📅 Preliminary Schedule</h2>
+            <h2>📅 Schedule</h2>
             
-            <div style="background: #f9f9f9; padding: 10px; margin-bottom: 15px; font-weight: bold;">
-                Thursday, December [XX]
+            <div style="background: #f9f9f9; padding: 10px; margin-bottom: 20px; font-weight: bold; border-left: 4px solid var(--dark-gray);">
+                Thursday, December 11
             </div>
 
             <div class="schedule-item">
-                <div class="time">09:00</div>
+                <div class="time">13:45 - 14:00</div>
                 <div class="details">
-                    <span class="title">Opening and Welcome</span>
-                    <span class="speaker">Prof. Arraut & Coordination</span>
+                    <span class="title">Opening Remarks</span>
+                    <div class="speaker-container">
+                        <span class="speaker"> Dr. Eduardo Arraut / Dr. Dimas</span>
+                        <a href="http://lattes.cnpq.br/6644520104732336" target="_blank" class="lattes-link">Lattes CV</a>
+                    </div>
                 </div>
             </div>
 
             <div class="schedule-item">
-                <div class="time">09:30</div>
+                <div class="time">14:00 - 14:15</div>
                 <div class="details">
-                    <span class="title">Current Overview of the Lessonia Project</span>
-                    <span class="speaker">Guest Speaker</span>
+                    <span class="title">Measuring Settlement from São Paulo Line 2 Subway Perforation Using High-Resolution SAR</span>
+                    <div class="speaker-container">
+                        <span class="speaker">Bruna Bortoluzzi Miraya</span>
+                        <a href="http://lattes.cnpq.br/8818133620232586" target="_blank" class="lattes-link">Lattes CV</a>
+                    </div>
                 </div>
             </div>
 
             <div class="schedule-item">
-                <div class="time">10:30</div>
+                <div class="time">14:15 - 14:30</div>
                 <div class="details">
-                    <span class="title">Coffee Break & Networking</span>
+                    <span class="title">Feasibility of Remote Monitoring of Pavement Distresses in Airport Runways Using SAR Microsatellite Constellations</span>
+                    <div class="speaker-container">
+                        <span class="speaker">Ezequiel Silva Rocha</span>
+                        <a href="http://lattes.cnpq.br/7922956208156198" target="_blank" class="lattes-link">Lattes CV</a>
+                    </div>
                 </div>
             </div>
 
             <div class="schedule-item">
-                <div class="time">11:00</div>
+                <div class="time">14:30 - 14:45</div>
                 <div class="details">
-                    <span class="title">Imaging Demands: Challenges and Bottlenecks</span>
-                    <span class="speaker">Roundtable (International Participation)</span>
+                    <span class="title">Flood Modeling and Micro-Scale Hydrological Constraints for Airport Location Assessment using High-Resolution SAR</span>
+                    <div class="speaker-container">
+                        <span class="speaker">Aluizio Brito Maia</span>
+                        <a href="http://lattes.cnpq.br/8817900721556290" target="_blank" class="lattes-link">Lattes CV</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="schedule-item">
+                <div class="time">14:45 - 15:00</div>
+                <div class="details">
+                    <span class="title">Mapping of Glacier Fractures in Antarctica via Remote Sensing Data Fusion</span>
+                    <div class="speaker-container">
+                        <span class="speaker">Kaian Fernandes Shahateet </span> <a href="http://lattes.cnpq.br/5247004527593247" target="_blank" class="lattes-link">Lattes CV</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="break-item">
+                ☕ 15:00 - 15:30: Coffee Break
+            </div>
+
+            <div class="schedule-item">
+                <div class="time">15:30 - 15:45</div>
+                <div class="details">
+                    <span class="title">Detecting Changes with SAR</span>
+                    <div class="speaker-container">
+                        <span class="speaker">João Vinholi</span> <a href="#" target="_blank" class="lattes-link">Lattes CV</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="schedule-item">
+                <div class="time">15:45 - 16:00</div>
+                <div class="details">
+                    <span class="title">Detection and Segmentation of Airstrips using SAR</span>
+                    <div class="speaker-container">
+                        <span class="speaker">Gustavo Stabile</span>
+                        <a href="#" target="_blank" class="lattes-link">Lattes CV</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="schedule-item">
+                <div class="time">16:00 - 16:15</div>
+                <div class="details">
+                    <span class="title">Assessment of Machine Learning Techniques for Oil Rig Classification in C-Band SAR</span>
+                    <div class="speaker-container">
+                        <span class="speaker">Fabiano Gabriel</span>
+                        <a href="#" target="_blank" class="lattes-link">Lattes CV</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="schedule-item">
+                <div class="time">16:15 - 16:45</div>
+                <div class="details">
+                    <span class="title">General Discussion</span>
+                    <div class="speaker-container">
+                        <span class="speaker">All Participants</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="schedule-item">
+                <div class="time">16:45 - 17:00</div>
+                <div class="details">
+                    <span class="title">Imaging Demands Definition & Closing</span>
+                    <div class="speaker-container">
+                        <span class="speaker">Dr. Eduardo Arraut / Dr. Dimas</span>
+                    </div>
                 </div>
             </div>
             
-             <p style="text-align: center; margin-top: 30px; font-style: italic; color: #777;">
-                * Schedule subject to change.
-            </p>
         </section>
 
         <footer>
@@ -213,3 +342,6 @@
 
 </body>
 </html>
+
+
+
