@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WS LESSONIA 2025 - Programação</title>
+    <style>
+        /* CONFIGURAÇÕES GERAIS (Minimalista) */
+        :root {
+            --ita-blue: #004586; /* Azul Institucional */
+            --dark-gray: #333333;
+            --light-gray: #f4f4f4;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--dark-gray);
+            background-color: var(--light-gray);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--white);
+            min-height: 100vh;
+            box-shadow: 0 0 20px rgba(0,0,0,0.05);
+        }
+
+        /* CABEÇALHO */
+        header {
+            background-color: var(--white);
+            padding: 40px 20px;
+            border-bottom: 4px solid var(--ita-blue);
+            text-align: center;
+        }
+
+        h1 {
+            color: var(--ita-blue);
+            margin: 0;
+            font-size: 2.5rem;
+            letter-spacing: -1px;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: #666;
+            margin-top: 10px;
+            font-weight: 400;
+        }
+
+        .alert-box {
+            background-color: #eef6fc;
+            border-left: 4px solid var(--ita-blue);
+            padding: 15px;
+            margin: 20px auto;
+            font-size: 0.9rem;
+            max-width: 90%;
+            text-align: left;
+        }
+
+        /* SEÇÕES */
+        section {
+            padding: 30px 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            color: var(--ita-blue);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            font-size: 1rem;
+            letter-spacing: 1px;
+        }
+
+        /* LISTA DE PROGRAMAÇÃO */
+        .schedule-item {
+            display: flex;
+            margin-bottom: 20px;
+            align-items: flex-start;
+        }
+
+        .time {
+            font-weight: bold;
+            min-width: 80px;
+            color: var(--ita-blue);
+        }
+
+        .details {
+            flex-grow: 1;
+        }
+
+        .title {
+            font-weight: bold;
+            display: block;
+        }
+
+        .speaker {
+            font-size: 0.9rem;
+            color: #555;
+            display: block;
+            font-style: italic;
+        }
+
+        /* RODAPÉ */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 0.8rem;
+            color: #888;
+            background-color: var(--dark-gray);
+            color: #fff;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--ita-blue);
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        .btn:hover {
+            background-color: #003366;
+        }
+
+        /* RESPONSIVO */
+        @media (max-width: 600px) {
+            h1 { font-size: 2rem; }
+            .schedule-item { flex-direction: column; }
+            .time { margin-bottom: 5px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <p style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px;">ITA &bull; IEI &bull; IEE</p>
+            
+            <h1>WS LESSONIA 2025</h1>
+            <p class="subtitle">Workshop de Planejamento e Apresentações Científicas</p>
+            
+            <div class="alert-box">
+                <strong>⚠️ Nota Importante:</strong> Devido à participação internacional online, as apresentações serão realizadas predominantemente em <strong>inglês</strong>.
+            </div>
+
+            <a href="LINK_DO_FORMULARIO_AQUI" class="btn">Inscreva-se Agora</a>
+        </header>
+
+        <section id="sobre">
+            <h2>Sobre o Evento</h2>
+            <p>O <strong>WS LESSONIA 2025</strong> reúne pesquisadores do LabGeo e LabGE para discutir o estado da arte no processamento de imagens SAR, definir novas demandas de imageamento e abordar os desafios futuros do projeto.</p>
+            <p><strong>📍 Local:</strong> ITA, São José dos Campos (Auditório a definir)</p>
+        </section>
+
+        <section id="programacao">
+            <h2>📅 Programação Preliminar</h2>
+            
+            <div style="background: #f9f9f9; padding: 10px; margin-bottom: 15px; font-weight: bold;">
+                Quinta-feira, XX de Dezembro
+            </div>
+
+            <div class="schedule-item">
+                <div class="time">09:00</div>
+                <div class="details">
+                    <span class="title">Abertura e Boas-vindas</span>
+                    <span class="speaker">Prof. Arraut & Coordenação</span>
+                </div>
+            </div>
+
+            <div class="schedule-item">
+                <div class="time">09:30</div>
+                <div class="details">
+                    <span class="title">Panorama Atual do Projeto Lessonia</span>
+                    <span class="speaker">Palestrante Convidado</span>
+                </div>
+            </div>
+
+            <div class="schedule-item">
+                <div class="time">10:30</div>
+                <div class="details">
+                    <span class="title">Coffee Break & Networking</span>
+                </div>
+            </div>
+
+            <div class="schedule-item">
+                <div class="time">11:00</div>
+                <div class="details">
+                    <span class="title">Demandas de Imageamento: Desafios e Gargalos</span>
+                    <span class="speaker">Mesa Redonda (Participação Internacional)</span>
+                </div>
+            </div>
+            
+             <p style="text-align: center; margin-top: 30px; font-style: italic; color: #777;">
+                * Programação sujeita a alterações.
+            </p>
+        </section>
+
+        <footer>
+            <p>Realização:</p>
+            <p><strong>Laboratório de Geomática (LabGeo - IEI) <br> LabGE - IEE</strong></p>
+            <p>Instituto Tecnológico de Aeronáutica - ITA</p>
+        </footer>
+    </div>
+
+</body>
+</html>
